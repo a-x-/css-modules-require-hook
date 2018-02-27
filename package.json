@@ -69,6 +69,7 @@
     "prepublish": "npm run transpile",
     "pretest": "npm run transpile",
     "test": "NODE_PATH=$(pwd)/test/tokens/node_modules mocha --require test/setup.js --ui tdd test/*/*.js --compilers js:babel-register",
-    "transpile": "gulp --cwd . --gulpfile scripts/gulpfile.js transpile"
+    "transpile": "gulp --cwd . --gulpfile scripts/gulpfile.js transpile",
+    "release": "npm run prepublish && gc build && npm version patch && git push && git push --tags"
   }
 }
