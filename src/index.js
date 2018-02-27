@@ -100,7 +100,12 @@ module.exports = function setupHook({
     const lazyResult = runner.process(source, assign({}, processorOpts, {from: filename}));
 
     // https://github.com/postcss/postcss/blob/master/docs/api.md#lazywarnings
-    lazyResult.warnings().forEach(message => console.warn(message.text));
+    try {
+      lazyResult.warnings().forEach(message => console.warn(message.text));
+    } catch (e) {
+      console.error(e);
+      throw e;
+    }
 
     tokens = lazyResult.root.exports || {};
 
