@@ -12,7 +12,7 @@ const validate = require('./validate');
 
 const postcss = require('postcss');
 const Values = require('postcss-modules-values');
-const LocalByDefault = require('postcss-modules-local-by-default');
+const LocalByDefault = require('postcss-icss-selectors');
 const ExtractImports = require('postcss-modules-extract-imports');
 const Scope = require('postcss-modules-scope');
 const ResolveImports = require('postcss-modules-resolve-imports');
